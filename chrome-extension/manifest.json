@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Web Resource Classifier",
+  "description": "Categorises web resources",
+  "version": "1.0",
+  "action": {
+    "default_popup": "about.html",
+    "default_icon": "extension-icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "css": [
+        "bootstrap.min.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": ["http://localhost:5000/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["loading.gif"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
